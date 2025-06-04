@@ -1,0 +1,18 @@
+name: Weekly Discord Report
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'  # 每週一 UTC 04:00 = 台灣時間中午 12:00
+  workflow_dispatch:
+
+jobs:
+  send-discord-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Message to Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"⏰ 每週提醒：現在是星期一中午囉，該檢查會議進度！\"}" \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
