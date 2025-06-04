@@ -2,7 +2,7 @@ name: Weekly Discord Report
 
 on:
   schedule:
-    - cron: '0 4 * * 1'  # 每週一 UTC 04:00 = 台灣時間中午 12:00
+    - cron: '50 12 * * 4'  # 每週四 台灣時間晚上 8:50
   workflow_dispatch:
 
 jobs:
@@ -14,5 +14,5 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d "{\"content\": \"⏰ 每週提醒：現在是星期一中午囉，該檢查會議進度！\"}" \
+               -d "{\"content\": \"⏰ 今天是星期四，記得新增下週的開獎期數\"}" \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
