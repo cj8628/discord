@@ -2,7 +2,7 @@ name: Weekly Discord Report
 
 on:
   schedule:
-    - cron: '50 12 * * 4'  # 每週四 台灣時間晚上 8:50
+    - cron: '50 20 * * 4'  # 每週四 台灣時間晚上 8:50
   workflow_dispatch:
 
 jobs:
